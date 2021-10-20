@@ -14,7 +14,6 @@ Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)                   
 --- 1.2 ---
 Maven archetype: a template project from which other projects are created
 
-
 --- DOCKER ---
 
 DOCKER DOCS TUTORIAL

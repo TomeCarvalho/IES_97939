@@ -12,9 +12,7 @@
         <dependency>
             <groupId>97939</groupId>
             <artifactId>ipmaapiclient</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>system</scope>
-<!--            <systemPath>${project.basedir}/</systemPath>-->
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

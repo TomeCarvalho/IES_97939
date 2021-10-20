@@ -1,0 +1,4 @@
+ipmaclient\IpmaCityForecast.class
+ipmaclient\IpmaService.class
+ipmaclient\CityForecast.class
+ipmaclient\GetForecast.class
