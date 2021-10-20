@@ -1,18 +1,65 @@
+--- Review questions ---
+
+A)
+The default lifecycle handles the project deployment.
+It is composed of the following phases (that are executed sequentially):
+validate - validates that the project is correct and all necessary information is available
+compile - compile the project's source code
+test - test the compiled code using a unit testing framework (it shouldn't be necessary for the code to be packaged or deployed)
+package - package the compiled code in its distributable format (e.g., jar)
+verify - run checks on results of integration tests to ensure quality criteria are met
+install - install the package into the local repository, so it can be used as a dependency in other projects locally
+deploy - done in the build environment, copies the final package to the remote repo for sharing with other devs and projects
+
+B)
+While building is Maven's main purpose, some Maven plugins can be used for run-related objectives such as testing. This is one of the cases where Maven is a suitable tool for running projects.
+
+C)
+At least the following commands:
+git clone - clone the repo locally
+git add - add files to the staging area
+git commit - commit added files
+git push - send the commited changes to the remote repo
+
+And likely some of these:
+git pull - fetch and merge changes on the remote repo to the working directory
+git merge - integrate changes from other branches
+git rm - delete files from the working directory and stage their deletion
+git status - list all the changes not staged for commit
+git diff - show the file differences that aren't staged yet
+
+D)
+1. Begin the commit message with a single short (fewer than 50 characters) line (commit title) summarizing the change, followed by a blank line and then a more thorough description.
+2. Capitalize the subject line
+3. Don't use periods in the subject line
+4. Use the imperative mood in the subject line (for example, "add feature" instead of "added feature")
+5. Wrap the body at 72 characters
+6. Use the body to explain what changed, as well as why and how.
+
+E)
+To prevent erasure of the data when the container is deleted and facilitate the backup of the database.
+
 --- 1.1 ---
-JDK 11 instalado de acordo com a recomendação.
-Maven instalado e environment variable definida.
-Output do commando "mvn --version":
-WSL
+JDK 11 installed due to the recommendation.
+Maven installed and environment variable set.
+Output of the "mvn --version" command:
+- WSL
 Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)
 Maven home: /mnt/c/apache-maven-3.8.3
 Java version: 11.0.11, vendor: Ubuntu, runtime: /usr/lib/jvm/java-11-openjdk-amd64
 Default locale: en, platform encoding: UTF-8
 OS name: "linux", version: "5.10.16.3-microsoft-standard-wsl2", arch: "amd64", family: "unix"
-Windows
+- Windows
 Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)                                                           Maven home: C:\apache-maven-3.8.3                                                                                       Java version: 11.0.12, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-11.0.12                           Default locale: en_US, platform encoding: Cp1252                                                                        OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 --- 1.2 ---
 Maven archetype: a template project from which other projects are created
+
+--- 1.4 ---
+Followed Docker "Orientation and Setup" tutorial parts 1 through 8.
+Tried Portainer, but used Docker Desktop + WSL integration on Windows after it.
+Completed the alternative exercise in d), using plsql and pgAdmin.
+Completed the Docker compose tutorial exercise.
 
 --- DOCKER ---
 
@@ -172,4 +219,3 @@ Volume: provides the ability to connect specific filesystem paths of the contain
 Bind mounts: unlike mounted volumes, they allow us to control the mountpoint on the host; this can be used to persist data, but it's often used to provide additional data into containers; they can be used to mount source code into a container to let it see code changes, respond and let us see the changes right away
 
 Docker Compose: tool that helps define and share multi-container apps; its big advantage is that you can define your app stack in a file, keep it at the root of our project repo and easily enable someone else to contribute to your project
-
