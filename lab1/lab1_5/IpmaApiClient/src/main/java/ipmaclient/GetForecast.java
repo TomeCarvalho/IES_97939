@@ -44,8 +44,10 @@ public class GetForecast {
             // TODO: Why does cityMap.get(cityName) return null even though the key exists?
             System.out.println("cityMap.get(cityName): " + cityMap.get(cityName));
 
-            // return cityForecast(cityMap.get(cityName), print);
-            return cityForecast(1100900, print); // Hard-coded Leiria since the map is cursed
+            Map<String, Integer> leiriaMap = new HashMap<>();
+            leiriaMap.put("Leiria", 1100900);
+            cityName = "Leiria";
+            return cityForecast(leiriaMap.get(cityName), print); // Hard-coded Leiria since the map is cursed
         } catch (Exception e) {
             e.printStackTrace();
             return "Error retrieving forecast (exception).";
