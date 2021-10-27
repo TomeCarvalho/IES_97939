@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b9683f8-3692-4068-8f78-701931574bd7" name="Changes" comment="Finish 2.2" />
+    <list default="true" id="6b9683f8-3692-4068-8f78-701931574bd7" name="Changes" comment="Finish 2.2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -73,7 +76,8 @@
       <updated>1635258582316</updated>
       <workItem from="1635258583513" duration="13000" />
       <workItem from="1635258601539" duration="103000" />
-      <workItem from="1635258715796" duration="860000" />
+      <workItem from="1635258715796" duration="1589000" />
+      <workItem from="1635329209673" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="Finish 2.2">
       <created>1635259230310</created>
@@ -101,6 +105,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Finish 2.2" />
     <option name="LAST_COMMIT_MESSAGE" value="Finish 2.2" />
   </component>
