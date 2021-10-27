@@ -1,4 +1,4 @@
-package tc97939.lab2_3;
+package tc97939.lab2_3b;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
