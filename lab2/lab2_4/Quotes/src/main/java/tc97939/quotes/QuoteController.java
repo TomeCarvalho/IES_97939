@@ -12,22 +12,21 @@ import java.util.concurrent.atomic.AtomicLong;
 public class QuoteController {
     private final AtomicLong counter = new AtomicLong();
 
+    // Return a random quote from a random show
     @GetMapping("/quote")
-    public QuoteJSON quote(@RequestParam(value = "show", defaultValue = "") String idStr) {
-        String[] quote;
-        if (idStr.equals(""))
-            quote = ShowQuotes.randomQuote();
-        else {
-            try {
-                quote = ShowQuotes.randomQuote(Integer.parseInt(idStr));
-            } catch (NumberFormatException e) {
-                System.err.println("Invalid 'show' parameter: '" + idStr + "', fetching random quote.");
-                quote = ShowQuotes.randomQuote();
-            }
-        }
+    public QuoteJSON quote() {
+        String[] quote = ShowQuotes.randomQuote();
         return new QuoteJSON(counter.incrementAndGet(), quote[0], quote[1]);
     }
 
+    // Return a random quote from a specified show
+    @GetMapping("/quotes")
+    public QuoteJSON quotes(@RequestParam(value = "show") int show_id) {
+        String[] quote = ShowQuotes.randomQuote(show_id);
+        return new QuoteJSON(counter.incrementAndGet(), quote[0], quote[1]);
+    }
+
+    // List all available shows (for which some quote exists)
     @GetMapping("/shows")
     public List<ShowJSON> shows() {
         List<ShowJSON> list = new ArrayList<>();
