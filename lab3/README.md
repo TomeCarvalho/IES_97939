@@ -37,6 +37,8 @@ b)
 
 ### 3.2
 
+Guide followed to get the Docker MySQL DB working: https://medium.com/tech-learn-share/docker-mysql-access-denied-for-user-172-17-0-1-using-password-yes-c5eadad582d3
+
 **Examples of some requests sent through Postman**
 
 1. HTTP Method: **POST** , Request URL: http://localhost:8080/api/v1/employees 
