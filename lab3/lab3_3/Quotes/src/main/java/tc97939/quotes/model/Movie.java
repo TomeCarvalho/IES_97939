@@ -1,6 +1,8 @@
 package tc97939.quotes.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -8,14 +10,21 @@ public class Movie {
     private long id;
     private String title;
     private int year;
+    @OneToMany(mappedBy="movie")
+    private List<Quote> quotes;
 
     public Movie() {
 
     }
 
-    public Movie(String title, int year) {
+    public Movie(String title, int year, List<Quote> quotes) {
         this.title = title;
         this.year = year;
+        this.quotes = quotes;
+    }
+
+    public Movie(String title, int year) {
+        this(title, year, new ArrayList<>());
     }
 
     @Id
