@@ -3,6 +3,7 @@ package tc97939.quotes.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 @Table(name = "movies")
@@ -25,6 +26,11 @@ public class Movie {
 
     public Movie(String title, int year) {
         this(title, year, new ArrayList<>());
+    }
+
+    public Quote randomQuote() {
+        int size = quotes.size();
+        return (size > 0) ? quotes.get(new Random().nextInt(size)) : null;
     }
 
     @Id
