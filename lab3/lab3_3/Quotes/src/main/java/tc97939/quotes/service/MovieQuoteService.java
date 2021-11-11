@@ -46,6 +46,12 @@ public class MovieQuoteService {
         return movieRepository.findAll();
     }
 
+    public Movie getRandomMovie() {
+        List<Movie> movies = getAllMovies();
+        int size = movies.size();
+        return (size > 0) ? movies.get(new Random().nextInt(size)) : null;
+    }
+
     public Quote saveQuote(Quote quote) {
         return quoteRepository.save(quote);
     }
@@ -82,9 +88,15 @@ public class MovieQuoteService {
         return getRandomQuoteFromMovie(getRandomMovie());
     }
 
-    private Movie getRandomMovie() {
-        List<Movie> movies = getAllMovies();
-        int size = movies.size();
-        return (size > 0) ? movies.get(new Random().nextInt(size)) : null;
+    public List<Quote> getMovieQuotesById(long movieId) {
+        return getMovieById(movieId).getQuotes();
+    }
+
+    public List<Quote> getRandomMovieQuotes() {
+        return getRandomMovie().getQuotes();
+    }
+
+    public List<Quote> getAllQuotes() {
+        return quoteRepository.findAll();
     }
 }

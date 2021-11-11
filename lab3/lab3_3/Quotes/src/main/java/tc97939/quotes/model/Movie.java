@@ -61,6 +61,14 @@ public class Movie {
         this.year = year;
     }
 
+    public List<Quote> getQuotes() {
+        return quotes;
+    }
+
+    public void setQuotes(List<Quote> quotes) {
+        this.quotes = quotes;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
