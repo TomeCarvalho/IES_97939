@@ -95,3 +95,45 @@ Before 3, I added a few more employees.
 
    `{"deleted": true}`
 
+
+
+### Review Questions
+
+
+
+**A) Explain the differences between the RestController and Controller components used in different parts of this lab**
+
+The @RestController annotation is a combination of the @Controller and @ResponseBody annotations. It simplifies the development of RESTful Web Services.
+
+Responses from web apps are normally intended for human viewers, and thus usually presented as HTML. In contrast, REST APIs return data in formats like JSON or XML, because their intended clients are programs, not people.
+
+Using the @RestController annotation saves us the hassle of using @ResponseBody on every handler method.
+
+
+
+**B) Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers. Describe the role of the elements modeled in the diagram**
+
+Controller (Presentation Layer/API Layer): The UI of the application; it presents the features and data to the user
+
+Service/Business Layer: Contains the business logic that drives the app's core functionalities.
+
+Repositories (Data Access Object layer): Interact with the database to save and restore app data.
+
+Entities (Models): Lightweight persistence domain objects; they typically represent tables in a relational database, and each instance corresponds to a row.
+
+
+
+**C) Explain the annotations @Table, @Column, @Id found in the Employee entity**
+
+@Table maps entities to database tables.
+
+@Column specifies the mapped column for a persistent property or field.
+
+@Id specifies the primary key of an entity.
+
+
+
+**D) Explain the use of the annotation @AutoWired (in the Rest Controller class).**
+
+@Autowired allows Spring to resolve and inject collaborating beans into our bean. In the case of 3.3, it makes it so that we don't need to instantiate the Service component. 
+
