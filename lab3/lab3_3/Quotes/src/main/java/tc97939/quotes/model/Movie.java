@@ -11,7 +11,6 @@ public class Movie {
     private long id;
     private String title;
     private int year;
-    @OneToMany(mappedBy="movie")
     private List<Quote> quotes;
 
     public Movie() {
@@ -61,6 +60,7 @@ public class Movie {
         this.year = year;
     }
 
+    @OneToMany(mappedBy = "movie")
     public List<Quote> getQuotes() {
         return quotes;
     }
