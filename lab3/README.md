@@ -113,13 +113,16 @@ Using the @RestController annotation saves us the hassle of using @ResponseBody 
 
 **B) Create a visualization of the Spring Boot layers (UML diagram or similar), displaying the key abstractions in the solution of 3.3, in particular: entities, repositories, services and REST controllers. Describe the role of the elements modeled in the diagram**
 
-Controller (Presentation Layer/API Layer): The UI of the application; it presents the features and data to the user
+| Layer                                     | Role                                                         | Files in 3.3                         |
+| ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------ |
+| Controller (Presentation Layer/API Layer) | The UI of the application; it presents the features and data to the user. | `MovieQuoteController`               |
+| Service/Business Layer                    | Contains the business logic that drives the app's core functionalities. | `MovieQuoteService`                  |
+| Repositories (Data Access Object layer)   | Interact with the database to save and restore app data.     | `MovieRepository`, `QuoteRepository` |
+| Entities (Models)                         | Lightweight persistence domain objects; they typically represent tables in a relational database, and each instance corresponds to a row. | `Movie`, `Quote`                     |
 
-Service/Business Layer: Contains the business logic that drives the app's core functionalities.
+The diagram (diagram.png) is located in the same directory as this README.
 
-Repositories (Data Access Object layer): Interact with the database to save and restore app data.
-
-Entities (Models): Lightweight persistence domain objects; they typically represent tables in a relational database, and each instance corresponds to a row.
+<img src="diagram.png" alt="diagram" style="zoom: 33%;" />
 
 
 
