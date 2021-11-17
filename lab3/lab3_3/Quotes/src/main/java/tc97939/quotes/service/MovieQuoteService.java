@@ -7,8 +7,9 @@ import tc97939.quotes.model.Quote;
 import tc97939.quotes.repository.MovieRepository;
 import tc97939.quotes.repository.QuoteRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Random;
 
 @Service
 public class MovieQuoteService {
@@ -47,9 +48,7 @@ public class MovieQuoteService {
     }
 
     public Movie getRandomMovie() {
-        List<Movie> movies = getAllMovies();
-        int size = movies.size();
-        return (size > 0) ? movies.get(new Random().nextInt(size)) : null;
+        return movieRepository.randomMovie();
     }
 
     public Quote saveQuote(Quote quote) {
@@ -76,12 +75,12 @@ public class MovieQuoteService {
         return quoteRepository.save(existingQuote);
     }
 
-    public Quote getRandomQuoteFromMovie(Movie movie) {
-        return movie.randomQuote();
+    public Quote getRandomQuoteFromMovie(long movieId) {
+        return quoteRepository.randomQuoteFromMovie(movieId);
     }
 
-    public Quote getRandomQuoteFromMovie(long movieId) {
-        return getRandomQuoteFromMovie(getMovieById(movieId));
+    public Quote getRandomQuoteFromMovie(Movie movie) {
+        return getRandomQuoteFromMovie(movie.getId());
     }
 
     public Quote getRandomQuoteFromRandomMovie() {
@@ -89,11 +88,11 @@ public class MovieQuoteService {
     }
 
     public List<Quote> getMovieQuotesById(long movieId) {
-        return getMovieById(movieId).getQuotes();
+        return quoteRepository.findQuotesByMovieId(movieId);
     }
 
     public List<Quote> getRandomMovieQuotes() {
-        return getRandomMovie().getQuotes();
+        return quoteRepository.findQuotesByMovie(getRandomMovie());
     }
 
     public List<Quote> getAllQuotes() {

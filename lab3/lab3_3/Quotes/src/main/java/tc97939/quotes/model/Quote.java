@@ -7,9 +7,12 @@ import javax.persistence.*;
 public class Quote {
     private long id;
     private String text;
-
-
     private Movie movie;
+
+    public Quote(Object[] columns) {
+        id = Integer.parseInt(String.valueOf(columns[0]));
+        text = (String) columns[1];
+    }
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "movie_id", nullable = false)
